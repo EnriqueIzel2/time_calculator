@@ -13,7 +13,8 @@
         android:layout_gravity="center"
         android:layout_marginVertical="20dp"
         android:text="Horário de início"
-        android:textSize="20sp" />
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,29 +23,42 @@
         android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/edit_horas_entrada"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
-            android:hint="horas" />
+            android:hint="horas"
+            android:importantForAutofill="no"
+            android:inputType="numberSigned" />
 
         <EditText
+            android:id="@+id/edit_minutos_entrada"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:hint="minutos" />
+            android:hint="minutos"
+            android:importantForAutofill="no"
+            android:inputType="numberSigned" />
 
     </LinearLayout>
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Quantidade de horas a serem trabalhadas" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Já incluindo parada para almoço" />
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="10dp"
+        android:text="Quantidade de horas a serem trabalhadas"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:paddingHorizontal="10dp"
+        android:text="(Já incluindo parada para almoço)"
+        android:textSize="14sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,16 +67,40 @@
         android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/edit_horas_trabalhadas"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
-            android:hint="horas" />
+            android:hint="horas"
+            android:importantForAutofill="no"
+            android:inputType="numberSigned" />
 
         <EditText
+            android:id="@+id/edit_minutos_trabalhados"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:hint="minutos" />
+            android:hint="minutos"
+            android:importantForAutofill="no"
+            android:inputType="numberSigned" />
     </LinearLayout>
 
+
+    <Button
+        android:id="@+id/btn_calcula_horas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Calcular" />
+
+    <TextView
+        android:id="@+id/txt_resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Seu horário de saída é XX:hh"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 </LinearLayout>
