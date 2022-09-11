@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginVertical="20dp"
-        android:text="Horário de início"
+        android:text="@string/main_hora_inicio_title"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -27,7 +27,7 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
-            android:hint="horas"
+            android:hint="@string/main_hint_horas_inicio"
             android:importantForAutofill="no"
             android:inputType="numberSigned" />
 
@@ -36,7 +36,7 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:hint="minutos"
+            android:hint="@string/main_hint_minutos_inicio"
             android:importantForAutofill="no"
             android:inputType="numberSigned" />
 
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:paddingHorizontal="10dp"
-        android:text="Quantidade de horas a serem trabalhadas"
+        android:text="@string/main_horas_trabalhar_title"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:paddingHorizontal="10dp"
-        android:text="(Já incluindo parada para almoço)"
+        android:text=""
         android:textSize="14sp" />
 
     <LinearLayout
@@ -71,7 +71,7 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
-            android:hint="horas"
+            android:hint="@string/main_hint_horas_trabalhar"
             android:importantForAutofill="no"
             android:inputType="numberSigned" />
 
@@ -80,7 +80,7 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:hint="minutos"
+            android:hint="@string/main_hint_minutos_trabalhar"
             android:importantForAutofill="no"
             android:inputType="numberSigned" />
     </LinearLayout>
@@ -92,7 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Calcular" />
+        android:text="@string/main_btn_title" />
 
     <TextView
         android:id="@+id/txt_resultado"
@@ -100,7 +100,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Seu horário de saída é XX:hh"
+        android:text=""
         android:textSize="18sp"
         android:textStyle="bold" />
 </LinearLayout>
