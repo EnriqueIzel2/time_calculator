@@ -2,4 +2,4 @@
 
 Calculadora de horas
 
-Em construção
+Em construção - pausado
