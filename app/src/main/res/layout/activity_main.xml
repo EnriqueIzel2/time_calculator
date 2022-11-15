@@ -46,11 +46,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:paddingHorizontal="10dp"
         android:text="@string/main_horas_trabalhar_title"
         android:textSize="18sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/main_horas_trabalhar_subtitle" />
 
     <TextView
         android:layout_width="wrap_content"
