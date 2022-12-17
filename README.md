@@ -1,7 +1,8 @@
 <h1 align="center">Time Calculator</h1>
 
 <p align="center">
-  Calculadora de horas para saber que horas eu devo bater meu ponto no trabalho.
+  Calculadora de horas para saber que horas eu devo bater meu ponto no trabalho. <br/>
+  Ainda em Construção
 </p>
 
 ---
