@@ -6,7 +6,7 @@
     <string name="main_hint_minutos_inicio">minutos</string>
 
     <string name="main_horas_trabalhar_title">Quantidade de horas a serem trabalhadas</string>
-    <string name="main_horas_trabalhar_subtitle">(Já incluindo 1 hora para almoço)</string>
+    <string name="main_horas_trabalhar_subtitle">(Incluindo tempo para almoço)</string>
     <string name="main_hint_horas_trabalhar">horas</string>
     <string name="main_hint_minutos_trabalhar">minutos</string>
 
