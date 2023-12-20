@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginVertical="20dp"
+        android:layout_marginTop="20dp"
         android:text="@string/main_hora_inicio_title"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -25,7 +26,7 @@
         <EditText
             android:id="@+id/edit_horas_entrada"
             android:layout_width="80dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginEnd="10dp"
             android:hint="@string/main_hint_horas_inicio"
             android:importantForAutofill="no"
@@ -34,7 +35,7 @@
         <EditText
             android:id="@+id/edit_minutos_entrada"
             android:layout_width="80dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginStart="10dp"
             android:hint="@string/main_hint_minutos_inicio"
             android:importantForAutofill="no"
@@ -59,24 +60,17 @@
         android:layout_gravity="center"
         android:text="@string/main_horas_trabalhar_subtitle" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:paddingHorizontal="10dp"
-        android:text=""
-        android:textSize="14sp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/edit_horas_trabalhadas"
             android:layout_width="80dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginEnd="10dp"
             android:hint="@string/main_hint_horas_trabalhar"
             android:importantForAutofill="no"
@@ -85,21 +79,12 @@
         <EditText
             android:id="@+id/edit_minutos_trabalhados"
             android:layout_width="80dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginStart="10dp"
             android:hint="@string/main_hint_minutos_trabalhar"
             android:importantForAutofill="no"
             android:inputType="numberSigned" />
     </LinearLayout>
-
-
-    <Button
-        android:id="@+id/btn_calcula_horas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="@string/main_btn_title" />
 
     <TextView
         android:id="@+id/txt_resultado"
@@ -110,4 +95,12 @@
         android:text=""
         android:textSize="18sp"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_calcula_horas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/main_btn_title" />
 </LinearLayout>
