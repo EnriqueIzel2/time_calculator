@@ -6,12 +6,4 @@ class TimeUtils {
 
     return horarioEntrada + cargaHoraria
   }
-
-  fun horasParaMinutos(horas: Int): Int{
-    return horas * 60
-  }
-
-  fun minutosParaHoras(minutos: Int): Double{
-    return 1.2
-  }
 }
