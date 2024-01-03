@@ -2,6 +2,8 @@ package com.enrique.calculadoradehoras
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.inputmethod.EditorInfo
+import android.widget.EditText
 import android.widget.Toast
 import com.enrique.calculadoradehoras.databinding.ActivityMainBinding
 
@@ -13,33 +15,66 @@ class MainActivity : AppCompatActivity() {
     binding = ActivityMainBinding.inflate(layoutInflater)
     setContentView(binding.root)
 
+    val horasEntrada = binding.editHorasEntrada
+    val minutosEntrada = binding.editMinutosEntrada
+    val horasTrabalhadas = binding.editHorasTrabalhadas
+    val minutosTrabalhados = binding.editMinutosTrabalhados
+
+    handleEditTexts(horasEntrada, minutosEntrada, horasTrabalhadas)
+
     binding.btnCalculaHoras.setOnClickListener {
-      val horasEntrada = binding.editHorasEntrada.text.toString()
-      val minutosEntrada = binding.editMinutosEntrada.text.toString()
-      val horasTrabalhadas = binding.editHorasTrabalhadas.text.toString()
-      val minutosTrabalhados = binding.editMinutosTrabalhados.text.toString()
 
       if (isAllFieldsNotEmpty()) {
         if (isValidTime()) {
-          val horarioSaida = timeConversor(
-            horasEntrada.toInt(),
-            minutosEntrada.toInt(),
-            horasTrabalhadas.toInt(),
-            minutosTrabalhados.toInt()
+          val horarioSaida = timeConverse(
+            horasEntrada.text.toString().toInt(),
+            minutosEntrada.text.toString().toInt(),
+            horasTrabalhadas.text.toString().toInt(),
+            minutosTrabalhados.text.toString().toInt()
           )
-          val message = "Horário de saída ${horarioSaida[0]}:${horarioSaida[1]}"
-          limpaCampos()
-          binding.txtResultado.setText(message)
+
+          val messageResult = getString(
+            R.string.result_message_time,
+            horarioSaida[0].toString(),
+            horarioSaida[1].toString()
+          )
+
+          cleanFieldAndTakeFocusForFirstField()
+          binding.txtResultado.text = messageResult
         } else {
-          Toast.makeText(this, "Tipo de horário errado, tente novamente", Toast.LENGTH_SHORT).show()
+          Toast.makeText(this, getString(R.string.error_message_invalid_format), Toast.LENGTH_SHORT)
+            .show()
         }
       } else {
-        Toast.makeText(this, "Todos os campos devem ser preenchidos", Toast.LENGTH_SHORT).show()
+        Toast.makeText(
+          this,
+          getString(R.string.error_message_fileds_must_be_filled_In), Toast.LENGTH_SHORT
+        ).show()
       }
     }
   }
 
-  private fun timeConversor(
+  private fun handleEditTexts(
+    horasEntrada: EditText,
+    minutosEntrada: EditText,
+    horasTrabalhadas: EditText
+  ) {
+    horasEntrada.setOnEditorActionListener { _, i, _ ->
+      if (i == EditorInfo.IME_ACTION_GO) {
+        minutosEntrada.requestFocus()
+      }
+      false
+    }
+
+    minutosEntrada.setOnEditorActionListener { _, i, _ ->
+      if (i == EditorInfo.IME_ACTION_GO) {
+        horasTrabalhadas.requestFocus()
+      }
+      false
+    }
+  }
+
+  private fun timeConverse(
     horas: Int, minutos: Int, hTrabalhadas: Int, mTrabalhadas: Int
   ): List<Int> {
     val totalMinutosParaTrabalhar = hTrabalhadas * 60 + mTrabalhadas
@@ -56,16 +91,10 @@ class MainActivity : AppCompatActivity() {
     val hTrabalhadas = binding.editHorasTrabalhadas.text.toString()
     val mTrabalhados = binding.editMinutosTrabalhados.text.toString()
 
-    if (
-      hEntrada.isNotEmpty() &&
-      mEntrada.isNotEmpty() &&
-      hTrabalhadas.isNotEmpty() &&
-      mTrabalhados.isNotEmpty()
-    ) {
-      return true
-    }
-
-    return false
+    return hEntrada.isNotEmpty() &&
+            mEntrada.isNotEmpty() &&
+            hTrabalhadas.isNotEmpty() &&
+            mTrabalhados.isNotEmpty()
   }
 
   private fun isValidTime(): Boolean {
@@ -73,23 +102,20 @@ class MainActivity : AppCompatActivity() {
     val mEntrada = binding.editMinutosEntrada.text.toString().toInt()
     val hTrabalhadas = binding.editHorasTrabalhadas.text.toString().toInt()
     val mTrabalhados = binding.editMinutosTrabalhados.text.toString().toInt()
-    if (
-      hEntrada in 0..24 &&
-      mEntrada in 0..60 &&
-      hTrabalhadas in 0..24 &&
-      mTrabalhados in 0..60
-    ) {
-      return true
-    }
-    return false
+
+    return hEntrada in 0..24 &&
+            mEntrada in 0..60 &&
+            hTrabalhadas in 0..24 &&
+            mTrabalhados in 0..60
   }
 
-  private fun limpaCampos() {
+  private fun cleanFieldAndTakeFocusForFirstField() {
     with(binding) {
       editHorasEntrada.setText("")
       editMinutosEntrada.setText("")
       editHorasTrabalhadas.setText("")
       editMinutosTrabalhados.setText("")
+      editHorasEntrada.requestFocus()
     }
   }
 }
