@@ -2,13 +2,16 @@
     <string name="app_name">Calculadora de Horas</string>
 
     <string name="main_hora_inicio_title">Horário de início</string>
-    <string name="main_hint_horas_inicio">horas</string>
-    <string name="main_hint_minutos_inicio">minutos</string>
+    <string name="main_hint_horas_inicio">horas de início</string>
+    <string name="main_hint_minutos_inicio">minutos de início</string>
 
     <string name="main_horas_trabalhar_title">Quantidade de horas a serem trabalhadas</string>
     <string name="main_horas_trabalhar_subtitle">(Incluindo tempo para almoço)</string>
-    <string name="main_hint_horas_trabalhar">horas</string>
-    <string name="main_hint_minutos_trabalhar">minutos</string>
+    <string name="main_hint_horas_trabalhar">horas a trabalhar</string>
+    <string name="main_hint_minutos_trabalhar">minutos a trabalhar</string>
 
     <string name="main_btn_title">Calcular</string>
+    <string name="result_message_time">Horário de saída %1$s:%2$s</string>
+    <string name="error_message_invalid_format">Formato de horário errado, tente novamente</string>
+    <string name="error_message_fileds_must_be_filled_In">Todos os campos devem ser preenchidos</string>
 </resources>
